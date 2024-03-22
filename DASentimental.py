@@ -230,13 +230,13 @@ def ret_results(text):
 
     return depression, anxiety, stress
 
+def testing():
+    while True:
+        text = input("Enter text to analyze or \"exit\" to quit\n")
+        if text.lower() == 'exit':
+            return
 
-while(True):
-    text = input("Enter text to analyze or \"exit\" to quit\n")
-    if text.lower() == 'exit':
-        sys.exit()
-
-    d, a, s = ret_results(text)
-    print(f'depression={d}')
-    print(f'anxiety={a}')
-    print(f'stress={s}')
+        d, a, s = ret_results(text)
+        print(f'depression={d}')
+        print(f'anxiety={a}')
+        print(f'stress={s}')
