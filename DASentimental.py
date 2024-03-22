@@ -232,7 +232,7 @@ def ret_results(text):
 
 
 while(True):
-    text = input("Enter text you want  to analyze or enter exit to terminate\n")
+    text = input("Enter text to analyze or \"exit\" to quit\n")
     if text.lower() == 'exit':
         sys.exit()
 
