@@ -48,7 +48,7 @@ def outer(cell):
 with open('models/anxiety_depression_stress/DASentimental/deployables/lemmedWords.pkl', 'rb') as f:
     lemmedWords = pickle.load(f)
 antonyms = pd.read_pickle("models/anxiety_depression_stress/DASentimental/deployables/antonyms.pkl")
-G = nx.read_gpickle("models/anxiety_depression_stress/DASentimental/deployables/graph.pkl")
+G = pd.read_pickle("models/anxiety_depression_stress/DASentimental/deployables/graph.pkl")
 flatDF_weight = pd.read_pickle("models/anxiety_depression_stress/DASentimental/deployables/flatDF.pkl")
 
 lemmedIndex = dict()
