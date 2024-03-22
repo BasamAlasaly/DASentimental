@@ -45,11 +45,11 @@ def outer(cell):
     return inner(cell)
 
 
-with open('deployables/lemmedWords.pkl', 'rb') as f:
+with open('models/anxiety_depression_stress/DASentimental/deployables/lemmedWords.pkl', 'rb') as f:
     lemmedWords = pickle.load(f)
-antonyms = pd.read_pickle("deployables/antonyms.pkl")
-G = nx.read_gpickle("deployables/graph.pkl")
-flatDF_weight = pd.read_pickle("deployables/flatDF.pkl")
+antonyms = pd.read_pickle("models/anxiety_depression_stress/DASentimental/deployables/antonyms.pkl")
+G = nx.read_gpickle("models/anxiety_depression_stress/DASentimental/deployables/graph.pkl")
+flatDF_weight = pd.read_pickle("models/anxiety_depression_stress/DASentimental/deployables/flatDF.pkl")
 
 lemmedIndex = dict()
 for i, v in enumerate(lemmedWords):
@@ -57,11 +57,11 @@ for i, v in enumerate(lemmedWords):
 
 
 depressionModel = keras.models.load_model(
-    'deployables/depression.h5', custom_objects={"coeff_determination": coeff_determination})
+    'models/anxiety_depression_stress/DASentimental/deployables/depression.h5', custom_objects={"coeff_determination": coeff_determination})
 anxietyModel = keras.models.load_model(
-    'deployables/anxiety.h5', custom_objects={"coeff_determination": coeff_determination})
+    'models/anxiety_depression_stress/DASentimental/deployables/anxiety.h5', custom_objects={"coeff_determination": coeff_determination})
 stressModel = keras.models.load_model(
-    'deployables/stress.h5', custom_objects={"coeff_determination": coeff_determination})
+    'models/anxiety_depression_stress/DASentimental/deployables/stress.h5', custom_objects={"coeff_determination": coeff_determination})
 
 
 def distance(row):
@@ -232,7 +232,7 @@ def ret_results(text):
 
 
 while(True):
-    text = input("Enter text you want  to analyze or enter exit to terminate")
+    text = input("Enter text you want  to analyze or enter exit to terminate\n")
     if text.lower() == 'exit':
         sys.exit()
 
